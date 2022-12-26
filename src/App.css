@@ -1,0 +1,161 @@
+/* Variables */
+:root {
+  --light-gray: #efecec;
+  --dark-gray: #313131;
+  --dark-cyan: #002b36;
+  --light-red: #ea7671;
+  --black: #222;
+  --white: #fff;
+  --error-msg-bg: rgba(255, 0, 0, 0.15);
+  --border-radius: 6px;
+}
+
+/* Generic styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 400px;
+}
+
+.search-form {
+  display: flex;
+  gap: 1rem;
+}
+
+.input {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-sizing: border-box;
+  font-family: inherit;
+  padding: 13px;
+  font-size: 16px;
+  border-radius: var(--border-radius);
+  color: var(--dark-gray);
+  opacity: 0.9;
+  outline: none;
+}
+
+.input:focus {
+  background-color: var(--white);
+  outline: 1px solid var(--dark-gray);
+}
+
+.submit-btn {
+  box-sizing: border-box;
+  color: var(--white);
+  outline: none;
+  font-family: inherit;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  transition: 0.1s all ease;
+  background-color: var(--dark-gray);
+  padding: 0.75rem 2rem;
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+  border-radius: var(--border-radius);
+}
+
+.submit-btn:disabled,
+.submit-btn:hover:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.submit-btn:hover:enabled {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.submit-btn:active:enabled {
+  cursor: pointer;
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+  border-radius: var(--border-radius);
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid var(--white);
+  border-bottom-color: var(--light-red);
+  border-radius: 40px;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.error-msg {
+  padding: 1rem;
+  background-color: var(--error-msg-bg);
+}
+
+.error-msg p {
+  font-weight: 800;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Tree component */
+.tree-node {
+  margin: 0 0 0 4px;
+  position: relative;
+  vertical-align: bottom;
+}
+
+.tree-node-parent {
+  display: inline-flex;
+  vertical-align: bottom;
+}
+
+.tree-branch {
+  margin-left: 12px;
+}
+
+.tree-node.is-child {
+  margin-left: 16px;
+}
+
+.tree-node::before {
+  content: '';
+  position: absolute;
+  top: 1.7rem;
+  left: 0;
+  height: calc(100% - 3.5rem);
+  border-left: 1px dashed gray;
+}
+
+.caret {
+  cursor: pointer;
+  user-select: none;
+  margin-left: -0.35rem;
+}
+
+.caret::before {
+  content: '\25B6';
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.caret.toggled::before {
+  transform: rotate(90deg);
+}
+
+.collapsed {
+  display: none;
+}
