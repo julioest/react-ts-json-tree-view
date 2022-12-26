@@ -31,7 +31,7 @@ const TreeView = ({
   return (
     <TreeNodeWrapper condition={isFirstElement} className="tree">
       <li className={`${isChildElement ? 'tree-node is-child' : 'tree-node'}`}>
-        <div className="tree-node-parent">
+        <div className="tree-name">
           <button className={!isToggled ? 'caret' : 'caret toggled'} onClick={handleToggle} />
           <span>
             {nameExists && <strong>{name}:&nbsp;</strong>}
@@ -63,7 +63,6 @@ const TreeView = ({
           })}
         </ul>
         <span>
-          {/* {isToggled && addBraces('close')} */}
           {isDataArray ? ']' : '}'}
           {!isLastElement ? ',' : ''}
         </span>

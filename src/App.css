@@ -119,7 +119,6 @@
 
 .tree-node-parent {
   display: inline-flex;
-  vertical-align: bottom;
 }
 
 .tree-branch {
