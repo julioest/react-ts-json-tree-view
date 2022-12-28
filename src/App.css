@@ -18,6 +18,14 @@
   min-height: 400px;
 }
 
+.sample-data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+}
+
+/* Form styles */
 .search-form {
   display: flex;
   flex-direction: column;
@@ -27,14 +35,11 @@
 .input {
   flex: 1;
   background-color: rgba(255, 255, 255, 0.8);
-  box-sizing: border-box;
-  font-family: inherit;
   padding: 13px;
   font-size: 16px;
   border-radius: var(--border-radius);
   color: var(--dark-gray);
   opacity: 0.9;
-  outline: none;
 }
 
 .input:focus {
@@ -42,44 +47,50 @@
   outline: 1px solid var(--dark-gray);
 }
 
-.submit-btn {
-  box-sizing: border-box;
-  color: var(--white);
-  outline: none;
-  font-family: inherit;
-  display: inline-block;
-  text-decoration: none;
-  border: none;
+/* Button styles */
+.btn {
   border-radius: var(--border-radius);
-  font-weight: bold;
-  transition: 0.1s all ease;
-  background-color: var(--dark-gray);
+  transition: 0.15s all ease;
   padding: 0.75rem 2rem;
 }
 
-.submit-btn:hover {
+.btn:hover {
   cursor: pointer;
   border-radius: var(--border-radius);
 }
 
-.submit-btn:disabled,
-.submit-btn:hover:disabled {
+.btn:disabled,
+.btn:hover:disabled {
   cursor: not-allowed;
   opacity: 0.6;
 }
 
-.submit-btn:hover:enabled {
+.btn:hover:enabled {
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
 }
 
-.submit-btn:active:enabled {
+.btn:active:enabled {
   cursor: pointer;
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
   border-radius: var(--border-radius);
+}
+
+.sample-btn {
+  font-size: 0.65rem;
+  border: 1px solid goldenrod;
+  margin: auto;
+  background-color: rgba(255, 183, 0, 0.2);
+  padding: 0.25rem 0.7rem;
+}
+
+.submit-btn {
+  color: var(--white);
+  background-color: var(--dark-gray);
+  font-weight: bold;
 }
 
 .loader {
@@ -111,7 +122,7 @@
   }
 }
 
-/* Tree component */
+/* Tree component styles */
 .tree-node {
   margin: 0 0 0 4px;
   position: relative;

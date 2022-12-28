@@ -10,7 +10,7 @@ const SearchForm = ({ onSubmit, inputVal, setInputVal }: SearchFormProps) => {
   return (
     <form onSubmit={onSubmit} className="search-form">
       <input onChange={handleOnChange} className="input" type="url" placeholder="Get JSON from url" value={inputVal} />
-      <button className="submit-btn" disabled={inputVal.length === 0}>
+      <button className="btn submit-btn" disabled={inputVal.length === 0}>
         {BUTTON_TEXT}
       </button>
     </form>

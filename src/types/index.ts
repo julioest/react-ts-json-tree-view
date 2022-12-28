@@ -4,6 +4,7 @@ export type JSONValue =
   | string
   | number
   | boolean
+  | object
   | { [key: string]: JSONValue }
   | Array<JSONValue>;
 

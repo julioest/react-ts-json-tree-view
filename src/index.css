@@ -32,11 +32,13 @@ ol, ul, li {
 }
 
 button, input {
+  box-sizing: border-box;
   background-color: transparent;
   border-radius: 0;
   color: inherit;
   line-height: inherit;
   appearance: none;
+  font-family: inherit;
 }
 
 strong {

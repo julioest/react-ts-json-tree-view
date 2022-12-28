@@ -9,6 +9,7 @@ import './App.css';
 function App() {
   const [inputVal, setInputVal] = React.useState<string>('');
   const [responseJSON, setResponseJSON] = React.useState<JSONValue | null>(null);
+  const [mockJSON] = React.useState<JSONValue>(mockData);
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [error, setError] = React.useState<Error | null>(null);
 
@@ -35,6 +36,10 @@ function App() {
     }
   };
 
+  const handleLoadSampleData = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setResponseJSON(mockJSON);
+  };
+
   return (
     <div className="app">
       <div className="container">
@@ -53,6 +58,13 @@ function App() {
           </div>
         )}
         {!isLoading && !error && responseJSON && <TreeView data={responseJSON} />}
+        {!responseJSON && (
+          <div className="sample-data">
+            <button className="btn sample-btn" onClick={handleLoadSampleData}>
+              No URL handy? Load sample data
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
