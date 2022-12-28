@@ -1,9 +1,9 @@
-import { FetchAPIProps } from "../types";
+import { fetchJSONProps } from "../types";
 
-export async function fetchAPI({
+export async function fetchJSON({
   endpoint,
   method = 'GET',
-}: FetchAPIProps) {
+}: fetchJSONProps): Promise<Response> {
   const response = await fetch(endpoint, {
     method: method.toUpperCase(),
     headers: {
@@ -11,7 +11,5 @@ export async function fetchAPI({
     },
   });
 
-  if (!response.ok) throw new Error(response.statusText)
-  
   return response;
 }

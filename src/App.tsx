@@ -3,7 +3,7 @@ import React from 'react';
 import SearchForm from './components/SearchForm';
 import TreeView from './components/TreeView';
 import { JSONValue } from './types';
-import { fetchAPI } from './utils';
+import { fetchJSON } from './utils';
 import './App.css';
 
 function App() {
@@ -18,7 +18,13 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetchAPI({ endpoint: inputVal });
+      const response = await fetchJSON({ endpoint: inputVal });
+
+      if (!response.ok) {
+        let { statusText, status } = response;
+        throw new Error(`${statusText ? `${statusText}` : `${status}`}`);
+      }
+
       const data = await response.json();
       setResponseJSON(data);
       setError(null);
@@ -41,7 +47,7 @@ function App() {
         {error && (
           <div className="error-msg">
             <p>
-              {`❌`}&nbsp; {'Whoops! Something went wrong:'}
+              {`❌`}&nbsp; {'Whoops! Something went wrong'}
             </p>
             <pre>{`${error}`}</pre>
           </div>

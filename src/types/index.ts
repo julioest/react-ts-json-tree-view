@@ -7,7 +7,7 @@ export type JSONValue =
   | { [key: string]: JSONValue }
   | Array<JSONValue>;
 
-export type FetchAPIProps = {
+export type fetchJSONProps = {
   endpoint: string;
   method?: string;
 }
