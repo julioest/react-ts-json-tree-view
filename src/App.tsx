@@ -1,5 +1,5 @@
 import React from 'react';
-// import mockData from './MOCK_DATA.json';
+import mockData from './MOCK_DATA.json';
 import SearchForm from './components/SearchForm';
 import TreeView from './components/TreeView';
 import { JSONValue } from './types';
