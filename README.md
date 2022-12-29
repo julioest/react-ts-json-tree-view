@@ -1,11 +1,7 @@
-# Getting Started with Create React App
+# react-ts-json-tree-view
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Demo
-
-![Watch the demo](/demo.gif)
-
+## Live Demo
+https://wonderful-twilight-b5cbbb.netlify.app
 
 ## Available Scripts
 
